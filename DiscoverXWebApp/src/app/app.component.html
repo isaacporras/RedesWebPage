@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DiscoverX</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="nav_bar">
+            <ul>
+                <li><a href="#"> HOME</a></li>
+                <li><a href="#"> Option1</a></li>
+                <li><a href="#"> Option2</a></li>
+                <li><a href="#"> Option3</a></li>
+                <li><a href="#"> About</a></li>
+            </ul>
+        </nav>
+        <div class="titles">
+            <article class="title">
+                <p>DiscoverX</p>
+            </article>
+            <article class="title2">
+                <p>Explorer</p>
+            </article>
+        </div>
+
+        <aside class="login">
+            
+            <label for="login" class="loginlabel"> Login</label>
+            <form class="form" method="POST" id="login_form">
+                <div class="input-boxes" name="email_box">
+                    <i class="fa fa-envelope-o"></i>
+                    <input id="mail" type="text" name="email" placeholder="Enter email here">
+                </div>
+                <div class="input-boxes" name="password_box">
+                    <i class="fa fa-lock"></i>
+                    <input id="passwrd" name="passw" type="password" placeholder="Enter password here">
+                </div>
+                <div class="showpassword">
+                    <input type="checkbox" id="sh_chkbx" autocomplete="off">
+                    <label id="sh_label">Mostrar contraseña</label>
+                    <script>
+                        document.getElementById('sh_chkbx').onclick = function () {
+                            if (this.checked) {
+                                document.getElementById('passwrd').type = "text";
+                            } else {
+                                document.getElementById('passwrd').type = "password";
+                            }
+                        };
+                    </script>
+                </div>
+                <input type="button" id="btn_submit" value="Login">
+                <script>
+                    document.getElementById('btn_submit').onclick = async function () {
+                        let response = await new Promise(resolve => {
+                            var http = new XMLHttpRequest();
+                            var url = "http://localhost:4000/login";
+                            var params = JSON.stringify({ email: document.getElementById("mail").value, passw: document.getElementById("passwrd").value });
+                            http.open("POST", url, true);
+                            http.setRequestHeader("Content-type", "application/json; charset=utf-8");
+                            http.setRequestHeader("Content-length", params.length);
+                            http.setRequestHeader("Connection", "close");
+
+                            http.onreadystatechange = function () {
+                                if (http.readyState == 4 && http.status == 200) {
+                                    alert(http.responseText);
+                                    var obj = JSON.parse(http.response);
+                                    console.log(obj[0].customer_id)
+                                    if (obj[0].customer_id != null) {
+                                        console.log("HOLA");
+                                        window.location.href = "http://www.youtube.com";
+                                    }
+                                }
+                            }
+                            http.send(params);
+
+                        });
+                    }
+
+                </script>
+            </form>
+        </aside>
+        <main class="content">
+            <article class="P1">
+                <p>Around the <br> World</p>
+            </article>
+            <article class="P2">
+                <p>Discover the world and enjoy our VR experiences. </p>
+            </article>
+        </main>
+
+        <footer class="foot">
+            <p> </p>
+        </footer>
+    </div>
+</body>
+
+</html>
+
+<router-outlet></router-outlet>

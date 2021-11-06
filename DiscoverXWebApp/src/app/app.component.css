@@ -1,0 +1,447 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: linear-gradient(to top, rgba(0,0,0,0.5)50%, rgba(0,0,0,0.5)50%),url("backgroundx.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 95vh;
+    width: 95vw;
+    margin: auto auto;
+    justify-content: center;
+}
+@font-face {font-family: "Conthrax Sb"; src: url(conthrax-sb.ttf); } 
+@font-face {font-family: "Myriad Pro"; font-style: italic; src: url(myriadpro-boldit.OTF); }
+
+.container{
+    width: 80%;
+    height: 100%;
+    margin: 0% auto;
+    display: grid;
+    row-gap: 30px;
+    column-gap: 30px;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: repeat(4, 1fr);
+}  
+
+.container .foot {
+    color: white;
+    grid-column: 1/5;
+    height: 20%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 17px;
+    margin-top: 5%;
+}
+.container .nav_bar {
+    color: white;
+    grid-column: 1/5;
+    height: 100%;
+    width: 100%;
+}
+.container .nav_bar ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    height: 70px;
+}
+.container .nav_bar ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 100%;
+    padding: 1rem;
+    font-family: Arial;
+    transition: 0.4s all ease-in-out;
+}
+.container .nav_bar ul li a:hover{
+    color: deepskyblue;
+}
+
+.container .titles{
+    grid-column: 1/4;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 130px;
+    text-align: left;
+    justify-content: flex-end;
+}
+
+.titles .title{
+    color: white;
+    font-weight: bold;
+    font-family: "Conthrax Sb";
+    font-size: 55px;
+    justify-content: flex-end;
+    height: 50px;
+}
+.titles .title2{
+    color: white;
+    font-weight: bold;
+    font-family:"Myriad Pro";
+    font-size: 35px;
+    justify-content: flex-start;
+}
+.container .content {
+    color: white;
+    grid-column: 1/4;
+    display: flex;
+    width: 95%;
+    height: 100%;
+    flex-direction: column;
+    text-align: left;
+    grid-row: 3/4;
+}
+
+.content .P1{
+    color: white;
+    font-weight: bold;
+    font-family: Arial;
+    font-size: 45px;
+    font-family: 'Times New Roman',Times, serif;
+    margin-bottom: 60px;
+}
+.content .P2{
+    color:white;
+    font-family: Arial;
+    font-size: 15px;
+    letter-spacing: 1.2px;
+    margin-bottom: 60px;
+    margin-right: 100px;
+    text-align: left;
+}
+.container .login {
+    color: white;
+    height:60%;
+    width: 280px;
+    grid-column: span 1;
+    grid-row: span 2;
+    padding: 5%;
+    background: rgba(0, 14, 60, 1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    margin-top: 20px;
+    margin-right: 50px;
+}
+.login .logo{
+    width: 150px;
+    height: 110px;
+    align-self: center;
+    padding: 5%;
+}
+.login .loginlabel{
+    border-radius: 10px;
+    background:transparent;
+    color:white;
+    font-weight: bold;
+    font-size: 50px;
+    width: 100%;
+    height: 20%;
+    font-family: 'Arial';
+    font-size: 30px;
+    text-align: center;
+    align-self: center;
+}
+
+.login .form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 7%;
+    height: 100%;
+    width: 100%;
+    padding: 5%;
+}
+.form .input-boxes{
+    width: 100%;
+    align-self: center;
+}
+.input-boxes input{
+    border:none;
+    width: 80%;
+    background: transparent;
+    border-bottom: 1px solid lightslategray;
+    color:lightslategray;
+    outline:none;
+    font-size: 18px;
+    font-family: "Arial";
+    text-align:start;
+    padding-left: 7px;
+}
+.input-boxes i[class="fa fa-envelope-o"]{
+    padding: 9px 8px;
+    color: #aaa;
+}
+
+.input-boxes i[class="fa fa-lock"]{
+    padding: 9px 11px;
+    color: #aaa;
+}
+
+.form .showpassword #sh_chkbx{
+    align-self: start;
+    margin-left: 4%;
+}
+
+.form .showpassword #sh_label{
+    font-size: 90%;
+    font-family: "Arial";
+    text-align: center;
+    width: 50%;
+    margin-left:3%;
+    margin-bottom: 5%;
+}
+
+.form input[type="button"]{
+    border:none;
+    color:white;
+    background: slateblue;
+    box-shadow: black 0px 3px 6px,black 0px 3px 6px;
+    outline:none;
+    width: 150px;
+    height: 50px;
+    align-self: center;
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 3%;
+    border-radius: 10px;
+    transition: ease-out;
+}
+
+.login input[type="button"]:hover{
+    color:slateblue;
+    background: white;
+}
+
+/*Para dispositivos que cuentan con una pantalla de un ancho entre 281px — 768px*/
+@media screen and (min-width:281px) and (max-width:768px){
+    body{
+        background: linear-gradient(to top, rgba(0,0,0,0.5)50%, rgba(0,0,0,0.5)50%),url("backgroundx.jpg");
+        background-position: center;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        height: 100%;
+        row-gap: 20px;
+    }  
+    .container .nav_bar,
+    .container .foot{
+        width: 90%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .container .nav_bar ul{
+        list-style: none;
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .container .nav_bar ul li a{
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: 15px;
+        padding: 0.5rem;
+        font-family: Arial;
+        transition: 0.4s all ease-in-out;
+    }
+    .container .nav_bar ul li a:hover{
+        color: deepskyblue;
+    }
+
+    .container .titles{
+        text-align: center;
+        height: 10%;
+    }
+   
+    .container .content{
+        row-gap: 1px;
+        display: flex;
+        width: 80%;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+    }
+    .content .P1{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center ;
+        text-align: center;
+    }
+    .content .P2{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center ;
+        text-align: center;
+        margin-left: 100px;
+    }
+    .container .login{
+        display: flex;
+        flex-direction: column;
+        margin-left: 50px;
+        align-items: center;
+        align-self: center;
+        width: 70%;
+        height: 100%;
+        padding-bottom: 10%;   
+    }
+
+    .login .logo{
+        height: 100px;
+        width: 140px;
+        align-self: center;
+    }
+
+    .login .loginlabel{
+        width: 100%;
+    }
+
+    .login .form .input-boxes{
+        margin-top: 5%;
+    }
+
+    .form .showpassword{
+        margin-top: 5%;
+    }
+    .form input[type="button"]{
+        margin-top: 10%;
+    }
+
+    .container .foot{
+        align-self: center;
+        text-align: center;
+        width: 90%;
+        margin-bottom: 3%;
+    }
+}
+
+/*Para dispositivos que cuentan con una pantalla de un ancho máximo de 280px*/
+@media screen and (max-width:280px){
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        height: 100%;
+        row-gap: 20px;
+    }  
+    .container .nav_bar,
+    .container .foot{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .container .nav_bar ul{
+        list-style: none;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .container .nav_bar ul li a{
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: 13px;
+        padding: 0.3rem;
+        font-family: Arial;
+        transition: 0.4s all ease-in-out;
+    }
+    .container .nav_bar ul li a:hover{
+        color: deepskyblue;
+    }
+
+    .container .titles{
+        text-align: center;
+        height: 10%;
+    }
+   
+    .container .content{
+        row-gap: 1px;
+        display: flex;
+        width: 80%;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+    }
+    .content .P1{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center ;
+        text-align: center;
+    }
+    .content .P2{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center ;
+        text-align: center;
+    }
+    .container .login{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: center;
+        width: 90%;
+        height: 100%;
+        padding-bottom: 10%;   
+    }
+
+    .login .logo{
+        height: 100px;
+        width: 140px;
+        align-self: center;
+    }
+
+    .login .loginlabel{
+        width: 100%;
+    }
+
+    .login .form .input-boxes{
+        margin-top: 5%;
+    }
+
+    .form .showpassword{
+        margin-top: 5%;
+    }
+    .form input[type="button"]{
+        margin-top: 10%;
+    }
+
+    .container .foot{
+        align-self: center;
+        text-align: center;
+        width: 90%;
+        margin-bottom: 3%;
+    }
+}
+  
